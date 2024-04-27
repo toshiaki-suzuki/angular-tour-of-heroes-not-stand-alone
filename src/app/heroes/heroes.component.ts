@@ -6,7 +6,7 @@ import { MessageService } from '../message.service';
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
-  styleUrl: './heroes.component.css'
+  styleUrls: ['./heroes.component.css']
 })
 
 export class HeroesComponent {
