@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { NgFor, NgIf, UpperCasePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,10 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgIf,
+    NgFor,
+    UpperCasePipe,
   ],
   providers: [],
   bootstrap: [AppComponent]
