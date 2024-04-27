@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import type { Hero } from '../hero';
-import {HEROES} from '../mock-heroes';
+import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'app-heroes',
@@ -8,7 +8,16 @@ import {HEROES} from '../mock-heroes';
   styleUrl: './heroes.component.css'
 })
 export class HeroesComponent {
-  heroes: Hero[] = HEROES;
+  constructor(private heroService: HeroService) { } // コンストラクタでHeroServiceをDI
+
+  ngOnInit(): void {
+    this.getHeroes();
+  }
+
+  getHeroes(): void {
+    this.heroes = this.heroService.getHeroes();
+  }
+  heroes: Hero[] = [];
   selectedHero?: Hero;
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
