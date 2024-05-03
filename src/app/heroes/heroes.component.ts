@@ -31,4 +31,9 @@ export class HeroesComponent {
         this.heroes.push(hero);
       });
   }
+
+  delete(hero: Hero): void {
+    this.heroes = this.heroes.filter(h => h !== hero);
+    this.heroService.deleteHero(hero.id).subscribe(); // Observeは必要ないが、subscribe()を呼び出すことで実行される
+  }
 }
